@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>QR Scanner</title>
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+
+<body class="bg-gray-200">
+
+    <div class="flex justify-center items-center min-h-screen bg-gray-100 antialiased">
+   <div class="container sm:mt-40 mt-24 my-auto max-w-md border-2 border-gray-200 rounded-[20px] p-3 bg-gray-800">
+    <!-- header -->
+    <div class="text-center m-6">
+      <h1 class="text-3xl font-semibold text-gray-100">QR Scanner</h1>
+      <p class="text-gray-200">Add Invitees</p>
+    </div>
+    <!-- sign-in -->
+    <div class="m-6">
+      <form class="mb-4" action="{{ url_for('add_invites') }}" method="POST">
+        <div class="mb-6">
+          <label for="first_name" class="block mb-2 text-sm text-gray-100 dark:text-gray-400">First Name</label>
+          <input type="text" name="first_name" id="first_name" placeholder="John" class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" required/>
+          <label for="last_name" class="block mb-2 text-sm text-gray-100 dark:text-gray-400">Last Name</label>
+          <input type="text" name="last_name" id="last_name" placeholder="Doe" class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" required/>
+          <label for="location" class="block mb-2 text-sm text-gray-100 dark:text-gray-400">Location</label>
+          <input type="text" name="location" id="location" placeholder="Zanzibar" class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" required/>
+        </div>
+        <div class="mb-6">
+          <button type="submit" class="w-full px-3 py-4 text-white bg-teal-500 rounded-md hover:bg-teal-600 focus:outline-none duration-100 ease-in-out">Add User</button>
+        </div>
+      </form>
+    </div>
+    <div class="mb-6">
+        <p class="text-gray-200" align="center"> {{ output }} </p>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>
